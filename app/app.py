@@ -1,14 +1,22 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from window.WelcomeWindow import Ui_Dialog
+from window.WelcomeWindow import Ui_Dialog_1
+from window.SelectionWindow import Ui_Dialog_2
 
 
-class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog):
+class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def __init__(self, parent=None):
         super(WelcomeWindow, self).__init__()
         self.setupUi(self)
+        self.pushButton.clicked.connect(self.show_selection_window)
         self.pushButton_2.clicked.connect(self.program_exit)
+
     def program_exit(self):
         self.close()
+    def show_selection_window(self):
+        self.Dialog_2 = SelectionWindow()
+        self.Dialog_2.show()
+
+
 
 def start_program():
     import sys
@@ -19,6 +27,11 @@ def start_program():
 
     sys.exit(app.exec())
 
+
+class SelectionWindow(QtWidgets.QDialog, Ui_Dialog_2):
+    def __init__(self, parent=None):
+        super(SelectionWindow, self).__init__()
+        self.setupUi(self)
 
 
 start_program()
