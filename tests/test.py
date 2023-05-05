@@ -1,5 +1,2 @@
-import pytest
-
-
-def TestForLip():
-    pytest.raises(ValueError)
+def test_start_program():
+    print("Tests is ON")
