@@ -15,8 +15,12 @@ class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def show_selection_window(self):
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
+        self.close()
 
-
+class SelectionWindow(QtWidgets.QDialog, Ui_Dialog_2):
+    def __init__(self, parent=None):
+        super(SelectionWindow, self).__init__()
+        self.setupUi(self)
 
 def start_program():
     import sys
@@ -26,12 +30,4 @@ def start_program():
     window.show()
 
     sys.exit(app.exec())
-
-
-class SelectionWindow(QtWidgets.QDialog, Ui_Dialog_2):
-    def __init__(self, parent=None):
-        super(SelectionWindow, self).__init__()
-        self.setupUi(self)
-
-
 start_program()
