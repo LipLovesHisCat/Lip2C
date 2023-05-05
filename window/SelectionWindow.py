@@ -37,7 +37,7 @@ class Ui_Dialog_2(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Помоги Психологу"))
         self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt;\">Выберите тип документа</span></p></body></html>"))
         self.pushButton_5.setText(_translate("Dialog", "Псих.-пед. хар-ка"))
         self.pushButton_6.setText(_translate("Dialog", "Расп. разв. зан."))
