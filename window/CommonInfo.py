@@ -209,7 +209,7 @@ class Ui_MainWindow_1(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Сведения об ученике (1 из 6)"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Психолого-педагогическая характеристика (1 из 7)"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">I. Сведения об ученике</span></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p>Фамилия</p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p>Имя</p></body></html>"))
