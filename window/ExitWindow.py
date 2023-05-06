@@ -12,14 +12,18 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog_Quit(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(400, 110)
-        self.buttonBox = QtWidgets.QDialogButtonBox(parent=Dialog)
-        self.buttonBox.setGeometry(QtCore.QRect(110, 70, 171, 32))
-        self.buttonBox.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.StandardButton.Cancel|QtWidgets.QDialogButtonBox.StandardButton.Ok)
-        self.buttonBox.setObjectName("buttonBox")
+        Dialog.setFixedSize(406, 137)
+        self.pushButton = QtWidgets.QPushButton(parent=Dialog)
+        self.pushButton.setGeometry(QtCore.QRect(80, 90, 113, 32))
+        font = QtGui.QFont()
+        font.setFamily("Proxima Nova")
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(parent=Dialog)
+        self.pushButton_2.setGeometry(QtCore.QRect(210, 90, 113, 32))
+        self.pushButton_2.setObjectName("pushButton_2")
         self.label = QtWidgets.QLabel(parent=Dialog)
-        self.label.setGeometry(QtCore.QRect(70, 20, 261, 31))
+        self.label.setGeometry(QtCore.QRect(60, 20, 291, 51))
         font = QtGui.QFont()
         font.setFamily("Proxima Nova")
         font.setPointSize(14)
@@ -27,11 +31,11 @@ class Ui_Dialog_Quit(object):
         self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept) # type: ignore
-        self.buttonBox.rejected.connect(Dialog.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\">Вы уверены, что хотите выйти?<br/>Внесенные изменения будут потеряны</p></body></html>"))
+        Dialog.setWindowTitle(_translate("Dialog", "Выход"))
+        self.pushButton.setText(_translate("Dialog", "Отмена"))
+        self.pushButton_2.setText(_translate("Dialog", "Выйти"))
+        self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\">Вы уверены, что хотите выйти?</p><p align=\"center\">Все внесенные изменения будут потеряны</p></body></html>"))
