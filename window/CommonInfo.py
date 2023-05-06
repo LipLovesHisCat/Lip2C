@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow_1(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(740, 665)
+        MainWindow.setFixedSize(740, 665)
         font = QtGui.QFont()
         font.setFamily("Proxima Nova")
         MainWindow.setFont(font)
