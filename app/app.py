@@ -1,7 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from window.WelcomeWindow import Ui_Dialog_1
 from window.SelectionWindow import Ui_Dialog_2
-
+from window.CommonInfo import Ui_MainWindow_1
 
 class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def __init__(self, parent=None):
@@ -23,6 +23,28 @@ class SelectionWindow(QtWidgets.QDialog, Ui_Dialog_2):
     def __init__(self, parent=None):
         super(SelectionWindow, self).__init__()
         self.setupUi(self)
+        self.pushButton_5.clicked.connect(self.show_common_info)
+
+    def show_common_info(self):
+        self.MainWindow_1 = CommonInfo()
+        self.MainWindow_1.show()
+        self.close()
+
+
+class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
+    def __init__(self, parent=None):
+        super(CommonInfo, self).__init__(parent)
+        self.setupUi(self)
+        self.pushButton_4.clicked.connect(self.program_exit)
+        self.pushButton_2.clicked.connect(self.show_selection_window)
+        self.pushButton.clicked.connect(self.show_selection_window)
+    def program_exit(self):
+        self.close()
+
+    def show_selection_window(self):
+        self.Dialog_2 = SelectionWindow()
+        self.Dialog_2.show()
+        self.close()
 
 
 def start_program():
