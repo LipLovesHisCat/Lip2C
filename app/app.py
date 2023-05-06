@@ -32,6 +32,9 @@ class SelectionWindow(QtWidgets.QDialog, Ui_Dialog_2):
         self.close()
 
 
+
+
+
 class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
     def __init__(self, parent=None):
         super(CommonInfo, self).__init__(parent)
@@ -53,6 +56,10 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
         self.close()
+
+    def closeEvent(self, a0: QtGui.QCloseEvent):
+        a0.ignore()
+        self.exit_window()
 
 
 class ExitWindow(QtWidgets.QDialog, Ui_Dialog_Quit):
