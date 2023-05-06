@@ -192,6 +192,9 @@ class Ui_MainWindow(object):
         self.pushButton_3 = QtWidgets.QPushButton(parent=self.horizontalLayoutWidget)
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout.addWidget(self.pushButton_3)
+        self.pushButton_4 = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_4.setGeometry(QtCore.QRect(20, 580, 113, 32))
+        self.pushButton_4.setObjectName("pushButton_4")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 740, 24))
@@ -206,7 +209,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "I.Сведения об ученике"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">I. Сведения об ученике</span></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p>Фамилия</p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p>Имя</p></body></html>"))
@@ -335,3 +338,4 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Отмена"))
         self.pushButton_2.setText(_translate("MainWindow", "< Назад"))
         self.pushButton_3.setText(_translate("MainWindow", "Вперед >"))
+        self.pushButton_4.setText(_translate("MainWindow", "Выход"))
