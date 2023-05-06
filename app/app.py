@@ -3,6 +3,7 @@ from window.WelcomeWindow import Ui_Dialog_1
 from window.SelectionWindow import Ui_Dialog_2
 from window.CommonInfo import Ui_MainWindow_1
 
+
 class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def __init__(self, parent=None):
         super(WelcomeWindow, self).__init__()
@@ -38,6 +39,7 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.pushButton_4.clicked.connect(self.program_exit)
         self.pushButton_2.clicked.connect(self.show_selection_window)
         self.pushButton.clicked.connect(self.show_selection_window)
+
     def program_exit(self):
         self.close()
 
