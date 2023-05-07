@@ -4,6 +4,7 @@ from window.SelectionWindow import Ui_Dialog_2
 from window.CommonInfo import Ui_MainWindow_1
 from window.ExitWindow import Ui_Dialog_Quit
 
+
 class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def __init__(self, parent=None):
         super(WelcomeWindow, self).__init__()
@@ -32,9 +33,6 @@ class SelectionWindow(QtWidgets.QDialog, Ui_Dialog_2):
         self.close()
 
 
-
-
-
 class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
     def __init__(self, parent=None):
         super(CommonInfo, self).__init__(parent)
@@ -51,9 +49,6 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
 
         self.Dialog_3 = ExitWindow()
         self.Dialog_3.exec()
-        self.Dialog_3.show()
-
-
 
 
     def show_selection_window(self):
@@ -65,6 +60,41 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         a0.ignore()
         self.exit_window()
 
+    def get_common_window_info(self):
+        kid_surname = self.textEdit.text()
+        kid_name = self.textEdit_2.text()
+        kid_lastname = self.textEdit_3.text()
+        kid_birth_date = self.textEdit_4.text()
+        kid_class_num = self.textEdit_5.text()
+        kif_class_letter = self.textEdit_6.text()
+        kid_date_of_start_study = self.textEdit_10.text()
+        address_town = self.textEdit_7.text()
+        address_street = self.textEdit_9.text()
+        address_house_number = self.textEdit_8.text()
+        adress_flat_number = self.textEdit_11.text()
+
+        sex = 'None'
+        if self.radioButton.isChecked():
+            sex = 'M'
+        elif self.radioButton_2.isChecked():
+            sex = 'Ж'
+
+        full_of_family = 'None'
+        if self.radioButton_3.isChecked():
+            full_of_family = 'Полная'
+        elif self.radioButton_4.isChecked():
+            full_of_family = 'Неполная'
+
+        mum_surname = self.textEdit_14.text()
+        mun_name = self.textEdit_12.text()
+        mun_lastname = self.textEdit_13.text()
+        mun_phone_number = self.textEdit_18.text()
+
+        pater_surname = self.textEdit_16.text()
+        pater_name = self.textEdit_17.text()
+        pater_lastname = self.textEdit_15.text()
+        pater_phone_number = self.textEdit_19.text()
+
 
 class ExitWindow(QtWidgets.QDialog, Ui_Dialog_Quit):
     def __init__(self, parent=None):
@@ -73,9 +103,10 @@ class ExitWindow(QtWidgets.QDialog, Ui_Dialog_Quit):
         self.pushButton.clicked.connect(self.close)
         self.pushButton_2.clicked.connect(exit)
 
-
     # def program_exit(self):
     #     self.close()
+
+
 def start_program():
     import sys
 
