@@ -238,32 +238,6 @@ p, li { white-space: pre-wrap; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Пол&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>90</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>М</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_2">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>90</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ж</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
@@ -693,32 +667,6 @@ p, li { white-space: pre-wrap; }
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Тел.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_4">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>370</y>
-      <width>100</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>непоная</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_3">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>370</y>
-      <width>100</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>полная</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_26">
     <property name="geometry">
      <rect>
@@ -777,6 +725,58 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>Выход</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>370</y>
+      <width>166</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QRadioButton" name="radioButton_3">
+       <property name="text">
+        <string>полная</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_4">
+       <property name="text">
+        <string>неполная</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>90</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QRadioButton" name="radioButton">
+       <property name="text">
+        <string>М</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="text">
+        <string>Ж</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

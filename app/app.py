@@ -48,8 +48,12 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
     #     self.close()
 
     def exit_window(self):
+
         self.Dialog_3 = ExitWindow()
+        self.Dialog_3.exec()
         self.Dialog_3.show()
+
+
 
 
     def show_selection_window(self):
