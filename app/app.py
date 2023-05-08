@@ -3,7 +3,7 @@ from window.WelcomeWindow import Ui_Dialog_1
 from window.SelectionWindow import Ui_Dialog_2
 from window.CommonInfo import Ui_MainWindow_1
 from window.ExitWindow import Ui_Dialog_Quit
-
+from window.CancelWindow import Ui_Dialog_Cancel
 
 class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def __init__(self, parent=None):
@@ -40,7 +40,7 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         # self.pushButton_4.clicked.connect(self.program_exit)
         self.pushButton_4.clicked.connect(self.exit_window)
         self.pushButton_2.clicked.connect(self.show_selection_window)
-        self.pushButton.clicked.connect(self.show_selection_window)
+        self.pushButton.clicked.connect(self.cancel_window)
 
     # def program_exit(self):
     #     self.close()
@@ -60,13 +60,18 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         a0.ignore()
         self.exit_window()
 
+    def cancel_window(self):
+        self.Dialog_4 = CancelWindow()
+        self.Dialog_4.exec()
+
+
     def get_common_window_info(self):
         kid_surname = self.textEdit.text()
         kid_name = self.textEdit_2.text()
         kid_lastname = self.textEdit_3.text()
         kid_birth_date = self.textEdit_4.text()
         kid_class_num = self.textEdit_5.text()
-        kif_class_letter = self.textEdit_6.text()
+        kid_class_letter = self.textEdit_6.text()
         kid_date_of_start_study = self.textEdit_10.text()
         address_town = self.textEdit_7.text()
         address_street = self.textEdit_9.text()
@@ -105,6 +110,22 @@ class ExitWindow(QtWidgets.QDialog, Ui_Dialog_Quit):
 
     # def program_exit(self):
     #     self.close()
+
+
+class CancelWindow(QtWidgets.QDialog, Ui_Dialog_Cancel):
+    def __init__(self, parent=None):
+        super(CancelWindow, self).__init__()
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.close)
+        self.pushButton_2.clicked.connect(self.back_to_selection_window)
+
+    # def back_to_selection_window(self):
+    #     self.Dialog_4 = SelectionWindow()
+    #     self.Dialog_4.show()
+    #     self.Dialog_5 = CommonInfo()
+    #     self.Dialog_5.close()
+    #     self.ba
+
 
 
 def start_program():
