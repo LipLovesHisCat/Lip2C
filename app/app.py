@@ -56,16 +56,28 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
 
+
     def closeEvent(self, a0: QtGui.QCloseEvent):
         if self.flag == True:
             a0.ignore()
             self.exit_window()
+            self.close()
         else:
             a0.accept()
 
     def cancel_window(self):
         self.Dialog_4 = CancelWindow()
         self.Dialog_4.show()
+        self.Dialog_4.pushButton_228.clicked.connect(self.on_exit_click)
+        self.Dialog_4.pushButton_111.clicked.connect(self.on_cancel_click)
+
+    def on_cancel_click(self):
+        self.Dialog_4.close()
+    def on_exit_click(self):
+        self.flag = False
+        self.Dialog_4.close()
+        self.show_selection_window()
+        self.close()
 
     def get_common_window_info(self):
         kid_surname = self.textEdit.text()
@@ -118,16 +130,8 @@ class CancelWindow(QtWidgets.QDialog, Ui_Dialog_Cancel):
     def __init__(self, parent=None):
         super(CancelWindow, self).__init__()
         self.setupUi(self)
-        self.pushButton.clicked.connect(self.close)
-        self.pushButton_2.clicked.connect(self.back_to_selection_window)
 
-    def back_to_selection_window(self):
-        self.bact_step = CommonInfo()
-        self.bact_step.flag = False
-        self.bact_step.close()
-        self.Dialog_4 = SelectionWindow()
-        self.Dialog_4.show()
-        self.close()
+
 
 
 
