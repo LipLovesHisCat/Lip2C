@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog_Cancel(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(406, 137)
+        Dialog.setFixedSize(406, 137)
         self.pushButton_111 = QtWidgets.QPushButton(parent=Dialog)
         self.pushButton_111.setGeometry(QtCore.QRect(80, 90, 113, 32))
         font = QtGui.QFont()
@@ -35,7 +35,7 @@ class Ui_Dialog_Cancel(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Отмена"))
         self.pushButton_111.setText(_translate("Dialog", "Отмена"))
         self.pushButton_228.setText(_translate("Dialog", "Выйти"))
         self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\">Вы уверены, что хотите отменить действия?</p><p align=\"center\">Все внесенные изменения будут потеряны</p></body></html>"))

@@ -39,6 +39,7 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         super(CommonInfo, self).__init__(parent)
         self.setupUi(self)
         self.flag = True
+
         # self.pushButton_4.clicked.connect(self.program_exit)
         self.pushButton_4.clicked.connect(self.exit_window)
         self.pushButton_2.clicked.connect(self.cancel_window)  # кнопка назад
@@ -50,7 +51,7 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
     def exit_window(self):
 
         self.Dialog_3 = ExitWindow()
-        self.Dialog_3.exec()
+        self.Dialog_3.show()
 
     def show_selection_window(self):
         self.Dialog_2 = SelectionWindow()
@@ -61,14 +62,16 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         if self.flag == True:
             a0.ignore()
             self.exit_window()
-            self.close()
+            # self.close()
         else:
             a0.accept()
 
     def cancel_window(self):
         self.Dialog_4 = CancelWindow()
+
         self.Dialog_4.show()
-        self.Dialog_4.pushButton_228.clicked.connect(self.on_exit_click)
+
+        self.Dialog_4.pushButton_228.clicked.connect(self.on_exit_click) #
         self.Dialog_4.pushButton_111.clicked.connect(self.on_cancel_click)
 
     def on_cancel_click(self):
@@ -119,6 +122,7 @@ class ExitWindow(QtWidgets.QDialog, Ui_Dialog_Quit):
     def __init__(self, parent=None):
         super(ExitWindow, self).__init__()
         self.setupUi(self)
+        self.setWindowModality(QtCore.Qt.WindowModality.ApplicationModal)
         self.pushButton.clicked.connect(self.close)
         self.pushButton_2.clicked.connect(exit)
 
@@ -130,6 +134,7 @@ class CancelWindow(QtWidgets.QDialog, Ui_Dialog_Cancel):
     def __init__(self, parent=None):
         super(CancelWindow, self).__init__()
         self.setupUi(self)
+        self.setWindowModality(QtCore.Qt.WindowModality.ApplicationModal)
 
 
 
