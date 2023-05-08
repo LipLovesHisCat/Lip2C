@@ -5,6 +5,7 @@ from window.CommonInfo import Ui_MainWindow_1
 from window.ExitWindow import Ui_Dialog_Quit
 from window.CancelWindow import Ui_Dialog_Cancel
 
+
 class WelcomeWindow(QtWidgets.QDialog, Ui_Dialog_1):
     def __init__(self, parent=None):
         super(WelcomeWindow, self).__init__()
@@ -37,10 +38,11 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
     def __init__(self, parent=None):
         super(CommonInfo, self).__init__(parent)
         self.setupUi(self)
+        self.flag = True
         # self.pushButton_4.clicked.connect(self.program_exit)
         self.pushButton_4.clicked.connect(self.exit_window)
-        self.pushButton_2.clicked.connect(self.show_selection_window)
-        self.pushButton.clicked.connect(self.cancel_window)
+        self.pushButton_2.clicked.connect(self.cancel_window)  # кнопка назад
+        self.pushButton.clicked.connect(self.cancel_window)  # кнопка отмена
 
     # def program_exit(self):
     #     self.close()
@@ -50,20 +52,20 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.Dialog_3 = ExitWindow()
         self.Dialog_3.exec()
 
-
     def show_selection_window(self):
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
-        self.close()
 
     def closeEvent(self, a0: QtGui.QCloseEvent):
-        a0.ignore()
-        self.exit_window()
+        if self.flag == True:
+            a0.ignore()
+            self.exit_window()
+        else:
+            a0.accept()
 
     def cancel_window(self):
         self.Dialog_4 = CancelWindow()
-        self.Dialog_4.exec()
-
+        self.Dialog_4.show()
 
     def get_common_window_info(self):
         kid_surname = self.textEdit.text()
@@ -119,12 +121,13 @@ class CancelWindow(QtWidgets.QDialog, Ui_Dialog_Cancel):
         self.pushButton.clicked.connect(self.close)
         self.pushButton_2.clicked.connect(self.back_to_selection_window)
 
-    # def back_to_selection_window(self):
-    #     self.Dialog_4 = SelectionWindow()
-    #     self.Dialog_4.show()
-    #     self.Dialog_5 = CommonInfo()
-    #     self.Dialog_5.close()
-    #     self.ba
+    def back_to_selection_window(self):
+        self.bact_step = CommonInfo()
+        self.bact_step.flag = False
+        self.bact_step.close()
+        self.Dialog_4 = SelectionWindow()
+        self.Dialog_4.show()
+        self.close()
 
 
 
