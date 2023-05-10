@@ -57,7 +57,6 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
 
-
     def closeEvent(self, a0: QtGui.QCloseEvent):
         if self.flag == True:
             a0.ignore()
@@ -71,11 +70,12 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
 
         self.Dialog_4.show()
 
-        self.Dialog_4.pushButton_228.clicked.connect(self.on_exit_click) #
+        self.Dialog_4.pushButton_228.clicked.connect(self.on_exit_click)  #
         self.Dialog_4.pushButton_111.clicked.connect(self.on_cancel_click)
 
     def on_cancel_click(self):
         self.Dialog_4.close()
+
     def on_exit_click(self):
         self.flag = False
         self.Dialog_4.close()
@@ -83,17 +83,6 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.close()
 
     def get_common_window_info(self):
-        kid_surname = self.textEdit.text()
-        kid_name = self.textEdit_2.text()
-        kid_lastname = self.textEdit_3.text()
-        kid_birth_date = self.textEdit_4.text()
-        kid_class_num = self.textEdit_5.text()
-        kid_class_letter = self.textEdit_6.text()
-        kid_date_of_start_study = self.textEdit_10.text()
-        address_town = self.textEdit_7.text()
-        address_street = self.textEdit_9.text()
-        address_house_number = self.textEdit_8.text()
-        adress_flat_number = self.textEdit_11.text()
 
         sex = 'None'
         if self.radioButton.isChecked():
@@ -107,17 +96,30 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         elif self.radioButton_4.isChecked():
             full_of_family = 'Неполная'
 
-        mum_surname = self.textEdit_14.text()
-        mun_name = self.textEdit_12.text()
-        mun_lastname = self.textEdit_13.text()
-        mun_phone_number = self.textEdit_18.text()
+        dct = {'kid_surname': self.textEdit.text(),
+               'kid_name': self.textEdit_2.text(),
+               'kid_lastname': self.textEdit_3.text(),
+               'kid_birth_date': self.textEdit_4.text(),
+               'kid_class_num': self.textEdit_5.text(),
+               'kid_class_letter': self.textEdit_6.text(),
+               'kid_date_of_start_study': self.textEdit_10.text(),
+               'address_town': self.textEdit_7.text(),
+               'address_street': self.textEdit_9.text(),
+               'address_house_number': self.textEdit_8.text(),
+               'adress_flat_number': self.textEdit_11.text(),
+               'sex': sex,
+               'full_of_family': full_of_family,
+               'mum_surname': self.textEdit_14.text(),
+               'mun_name': self.textEdit_12.text(),
+               'mun_lastname': self.textEdit_13.text(),
+               'mun_phone_number': self.textEdit_18.text(),
 
-        pater_surname = self.textEdit_16.text()
-        pater_name = self.textEdit_17.text()
-        pater_lastname = self.textEdit_15.text()
-        pater_phone_number = self.textEdit_19.text()
-
-
+               'pater_surname': self.textEdit_16.text(),
+               'pater_name': self.textEdit_17.text(),
+               'pater_lastname': self.textEdit_15.text(),
+               'pater_phone_number': self.textEdit_19.text(),
+               }
+        return dct
 class ExitWindow(QtWidgets.QDialog, Ui_Dialog_Quit):
     def __init__(self, parent=None):
         super(ExitWindow, self).__init__()
@@ -135,9 +137,6 @@ class CancelWindow(QtWidgets.QDialog, Ui_Dialog_Cancel):
         super(CancelWindow, self).__init__()
         self.setupUi(self)
         self.setWindowModality(QtCore.Qt.WindowModality.ApplicationModal)
-
-
-
 
 
 def start_program():
