@@ -151,12 +151,12 @@ class PPX2(QtWidgets.QMainWindow, Ui_MainWindow_PPX):
         self.Dialog_4.close()
 
     def on_exit_click(self):
-        self.flag = False
+
         self.Dialog_4.close()
         self.show_selection_window()
         self.close()
     def show_selection_window(self):
-        self.flag=True
+        self.flag=False
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
 
