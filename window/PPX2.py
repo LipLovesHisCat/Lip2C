@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow_PPX(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1116, 594)
+        MainWindow.setFixedSize(1116, 594)
         font = QtGui.QFont()
         font.setKerning(False)
         MainWindow.setFont(font)
