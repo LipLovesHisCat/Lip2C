@@ -130,7 +130,7 @@ class PPX2(QtWidgets.QMainWindow, Ui_MainWindow_PPX):
     def __init__(self, parent=None):
         super(PPX2, self).__init__()
         self.setupUi(self)
-        self.flag = False
+        self.flag = True
         self.pushButton.clicked.connect(self.exit_window)      #Exit
         self.pushButton_2.clicked.connect(self.cancel_window)     #Cancel
         self.pushButton_3.clicked.connect(self.show_common_info)  #Back
@@ -156,10 +156,12 @@ class PPX2(QtWidgets.QMainWindow, Ui_MainWindow_PPX):
         self.show_selection_window()
         self.close()
     def show_selection_window(self):
+        self.flag=True
         self.Dialog_2 = SelectionWindow()
         self.Dialog_2.show()
 
     def show_common_info(self):
+        self.flag = False
         self.Main_Window_1 = CommonInfo()
         self.Main_Window_1.show()
         self.close()
