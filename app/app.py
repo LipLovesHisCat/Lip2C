@@ -80,7 +80,7 @@ class CommonInfo(QtWidgets.QMainWindow, Ui_MainWindow_1):
         self.flag = False
         # self.get_common_window_info()
         self.close()
-        print(dct)
+        # print(dct)
     def exit_window(self):
 
         self.Dialog_3 = ExitWindow()
