@@ -18,9 +18,9 @@ class Ui_MainWindow_1(object):
         MainWindow.setFont(font)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(220, 10, 301, 31))
-        self.label.setObjectName("label")
+        self.label_1 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_1.setGeometry(QtCore.QRect(220, 10, 301, 31))
+        self.label_1.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 70, 60, 16))
         self.label_2.setObjectName("label_2")
@@ -30,9 +30,9 @@ class Ui_MainWindow_1(object):
         self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(380, 70, 60, 16))
         self.label_4.setObjectName("label_4")
-        self.textEdit = QtWidgets.QTextEdit(parent=self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(20, 90, 131, 31))
-        self.textEdit.setObjectName("textEdit")
+        self.textEdit_1 = QtWidgets.QTextEdit(parent=self.centralwidget)
+        self.textEdit_1.setGeometry(QtCore.QRect(20, 90, 131, 31))
+        self.textEdit_1.setObjectName("textEdit")
         self.textEdit_2 = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.textEdit_2.setGeometry(QtCore.QRect(200, 90, 131, 31))
         self.textEdit_2.setObjectName("textEdit_2")
@@ -222,11 +222,11 @@ class Ui_MainWindow_1(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Психолого-педагогическая характеристика (1 из 7)"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">I. Сведения об ученике</span></p></body></html>"))
+        self.label_1.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">I. Сведения об ученике</span></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "<html><head/><body><p>Фамилия</p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "<html><head/><body><p>Имя</p></body></html>"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p>Отчество</p></body></html>"))
-        self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.textEdit_1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Proxima Nova\'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
